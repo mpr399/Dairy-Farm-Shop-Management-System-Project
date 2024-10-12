@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  dfsmsdb-server:
+    container_name: dfsmsdb-server
+    image: mvpar/dfsmsdb
+    ports:
+      - "3328:3306"
+    volumes:
+      - dfsmsdbdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Mpr@399
+
+  dfsmsapp:
+    container_name: dfsmsapp
+    image: mvpar/dfsmsapp
+    ports:
+      - "8028:80"
+    volumes: 
+      - dfsmsappdata:/var/www/html
+volumes:
+  dfsmsdbdata: {}
+  dfsmsappdata: {}
