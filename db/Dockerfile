@@ -6,7 +6,7 @@ FROM mysql:8.0
 ENV MYSQL_ROOT_PASSWORD=Mpr@399
 ENV MYSQL_DATABASE=dfsms
 # Copy initialization SQL file (optional)
-COPY ./dfsmsdb.sql /docker-entrypoint-initdb.d/
+COPY ./dfsms.sql /docker-entrypoint-initdb.d/
 
 # Expose port 3306
 EXPOSE 3306
